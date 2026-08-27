@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A private, sincere apology letter webpage.">
+  <title>An Apology, From Me To You</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <!--
+    EDITING MAP
+    Search this file for "EDITABLE:" to personalize the page.
+    Search script.js for "EDITABLE:" to change button messages.
+    Place your real photos in ./assets/ and follow the comments in the memory section.
+  -->
+
+  <a class="skip-link" href="#main">Skip to the apology</a>
+
+  <div class="ambient-scene" aria-hidden="true">
+    <canvas id="particleCanvas"></canvas>
+    <div class="film-grain"></div>
+  </div>
+
+  <div class="heart-field" aria-hidden="true">
+    <span style="--x: 7%; --y: 18%; --size: 18px; --delay: -2s; --duration: 19s; --depth: 28px;">&#9825;</span>
+    <span style="--x: 19%; --y: 73%; --size: 13px; --delay: -8s; --duration: 24s; --depth: -34px;">&#9825;</span>
+    <span style="--x: 34%; --y: 34%; --size: 11px; --delay: -5s; --duration: 21s; --depth: 46px;">&#9825;</span>
+  </div>
+
+  <div class="floating-scene" id="floatingScene" aria-hidden="true"></div>
+
+  <header class="opening" id="opening">
+    <div class="opening__content">
+      <!-- EDITABLE: Her name shown as a private dedication -->
+      <p class="dedication">For <span data-editable="her-name">Ichu</span></p>
+
+      <!-- EDITABLE: Opening line -->
+      <p class="opening__line" data-editable="opening-line">Before you read anything&hellip; I just want to say I am sorry.</p>
+
+      <!-- EDITABLE: Opening title -->
+      <h1 class="title-3d" data-tilt-3d>
+        I Owe You An Apology.
+      </h1>
+
+      <!-- EDITABLE: Opening note -->
+      <p class="opening__note" data-editable="opening-note">
+        This is not here to rush you, pressure you, or make anything smaller than it was.
+        It is just me trying to be honest, gentle, and accountable.
+      </p>
+
+      <button class="primary-button" id="openHeartBtn" type="button">
+        <span>click</span>
+        <span aria-hidden="true">&rarr;</span>
+      </button>
+
+      <div class="music-player">
+        <p class="music-player__label">A song for this moment</p>
+        <audio id="apologyMusic" autoplay loop preload="auto">
+          <source src="./Theme%20of%20Mitsuha%28MP3_160K%29.mp3" type="audio/mpeg">
+          Your browser does not support audio playback.
+        </audio>
+      </div>
+    </div>
+
+    <div class="opening-3d-stage" data-tilt-3d aria-hidden="true">
+      <div class="letter-object-3d">
+        <div class="letter-object__face"></div>
+        <div class="letter-object__fold"></div>
+        <span class="letter-object__seal">&#9825;</span>
+      </div>
+      <div class="ring-3d"></div>
+      <div class="soft-heart-3d">&#9825;</div>
+    </div>
+
+    <div class="opening__edge" aria-hidden="true">
+      <span></span>
+      <p>A private letter begins below</p>
+    </div>
+  </header>
+
+  <main class="main-experience" id="main" tabindex="-1">
+    <section class="section apology-section reveal" id="apology" aria-labelledby="apology-title">
+      <div class="section__inner narrow">
+        <p class="chapter">i love you</p>
+
+        <!-- EDITABLE: Section 1 headline -->
+        <h2 id="apology-title" data-editable="apology-headline">I am Sorry.</h2>
+
+        <div class="prose lead-copy">
+          <!-- EDITABLE: Personal apology paragraph 1 -->
+          <p data-editable="personal-apology-1">
+            I know saying sorry cannot instantly undo what happened. But I want you to know
+            that I recognize where I went wrong, and I am genuinely sorry for hurting you.
+          </p>
+
+          <!-- EDITABLE: Personal apology paragraph 2 -->
+          <p data-editable="personal-apology-2">
+            Your feelings matter to me. If I made you feel unheard, disappointed, or alone in
+            something we should have carried with care, I do not want to explain that away.
+            I want to understand it, own it, and do better.
+          </p>
+
+          <!-- EDITABLE: Personal apology paragraph 3 -->
+          <p data-editable="personal-apology-3">
+            I value you too much to treat this like a small thing. I am sorry for my part,
+            and I am willing to keep learning from it, regardless of what you decide.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section meaning-section reveal" id="meaning" aria-labelledby="meaning-title">
+      <div class="section__inner">
+        <div class="section-heading">
+          <p class="chapter">im sorry</p>
+
+          <!-- EDITABLE: Section 2 headline -->
+          <h2 id="meaning-title" data-editable="meaning-headline">You Mean More Than I Sometimes Know How To Say.</h2>
+        </div>
+
+        <div class="meaning-grid" data-stagger>
+          <article class="meaning-card">
+            <!-- EDITABLE: Appreciation card 1 -->
+            <p class="card-kicker">Your place in my life</p>
+            <h3 data-editable="meaning-card-title-1">You are not background in my days.</h3>
+            <p data-editable="meaning-card-body-1">
+              You are someone whose presence changes the mood, and the way ordinary
+              moments feel.
+            </p>
+          </article>
+
+          <article class="meaning-card">
+            <!-- EDITABLE: Appreciation card 2 -->
+            <p class="card-kicker">What you bring</p>
+            <h3 data-editable="meaning-card-title-2">You make life feel softer.</h3>
+            <p data-editable="meaning-card-body-2">
+              In the way you laugh, care, notice things, and stay thoughtful even when life is
+              heavy, you bring a kind of warmth I never want to take for granted.
+            </p>
+          </article>
+
+          <article class="meaning-card">
+            <!-- EDITABLE: Appreciation card 3 -->
+            <p class="card-kicker">What I remember</p>
+            <h3 data-editable="meaning-card-title-3">The small things stay with me.</h3>
+            <p data-editable="meaning-card-body-3">
+              It is not only the big memories. It is the little looks, quiet jokes, shared
+              routines, and tiny pieces of us that I keep close.
+            </p>
+          </article>
+
+          <article class="meaning-card">
+            <!-- EDITABLE: Appreciation card 4 -->
+            <p class="card-kicker">What I appreciate</p>
+            <h3 data-editable="meaning-card-title-4">You deserve care that feels steady.</h3>
+            <p data-editable="meaning-card-body-4">
+              You deserve patience, honesty, respect, and someone who shows up with actions
+              that match their words.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section memories-section reveal" id="memories" aria-labelledby="memories-title">
+      <div class="section__inner">
+        <div class="section-heading">
+          <p class="chapter">it was my mistake</p>
+
+          <!-- EDITABLE: Section 3 headline -->
+          <h2 id="memories-title" data-editable="memories-headline">Some Moments I Never Want To Forget.</h2>
+
+          <!-- EDITABLE: Memory section intro -->
+          <div data-editable="memories-intro">
+            <p>I am truly sorry for hurting you. I know an apology does not erase what happened, but I want you to know that I understand my actions affected you, and I take responsibility for that.</p>
+
+            <p>I never wanted to make you feel unimportant, unheard, or disappointed. Your feelings matter to me, and I am sorry for any moment where I made you feel like they did not.</p>
+
+            <p>I am not here to make excuses or ask you to forget everything quickly. I just want to be honest enough to admit where I was wrong and patient enough to give you the space you need.</p>
+
+            <p>You mean so much to me, and I hate knowing that I caused pain to someone I care about deeply. I am sorry for the words, choices, or silence that made things harder for you.</p>
+
+            <p>I want to learn from this and become better, not only by saying sorry but by showing it through my actions. Whatever happens next, I hope you know my apology is real.</p>
+          </div>
+        </div>
+
+        <div class="memory-gallery" aria-label="Editable memories and photos">
+          <article class="memory-card reveal">
+            <!--
+              EDITABLE PHOTO 1:
+              Put your image in ./assets/ and replace this memory-photo div with:
+              <img class="memory-image" src="./assets/photo-1.jpg" alt="Describe this memory">
+            -->
+            <img class="memory-image" src="./.trashed-1783355365-_myhidden_-IMG_20260401_130400.jpg" alt="Memory 01">
+
+            <!-- EDITABLE: Memory 1 title -->
+            <h3 data-editable="memory-title-1">The day everything felt light.</h3>
+          </article>
+
+          <article class="memory-card reveal">
+            <!--
+              EDITABLE PHOTO 2:
+              Put your image in ./assets/ and replace this memory-photo div with:
+              <img class="memory-image" src="./assets/photo-2.jpg" alt="Describe this memory">
+            -->
+            <img class="memory-image" src="./.trashed-1783355365-_myhidden_-IMG_20260401_130458.jpg" alt="Memory 02">
+
+            <!-- EDITABLE: Memory 2 title -->
+            <h3 data-editable="memory-title-2">A quiet moment I still replay.</h3>
+          </article>
+
+          <article class="memory-card reveal">
+            <!--
+              EDITABLE PHOTO 3:
+              Put your image in ./assets/ and replace this memory-photo div with:
+              <img class="memory-image" src="./assets/photo-3.jpg" alt="Describe this memory">
+            -->
+            <img class="memory-image" src="./.trashed-1783355365-_myhidden_-IMG_20260401_130418.jpg" alt="Memory 03">
+
+            <!-- EDITABLE: Memory 3 title -->
+            <h3 data-editable="memory-title-3">One of the reasons I am grateful.</h3>
+          </article>
+
+          <article class="memory-card reveal">
+            <!--
+              EDITABLE PHOTO 4:
+              Put your image in ./assets/ and replace this memory-photo div with:
+              <img class="memory-image" src="./assets/photo-4.jpg" alt="Describe this memory">
+            -->
+            <img class="memory-image" src="./.trashed-1783355365-_myhidden_-IMG_20260401_130426.jpg" alt="Memory 04">
+
+          
+
+            <!-- EDITABLE: Memory 4 title -->
+            <h3 data-editable="memory-title-4">A small piece of us.</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section promises-section reveal" id="promises" aria-labelledby="promises-title">
+      <div class="section__inner split">
+        <div class="section-heading">
+          <p class="chapter">sorry</p>
+
+          <!-- EDITABLE: Section 4 headline -->
+          <h2 id="promises-title" data-editable="promises-headline">Not Just Sorry. Better.</h2>
+
+          <!-- EDITABLE: Promise section intro -->
+          <p data-editable="promises-intro">
+            I do not want to make impossible promises. I want to make real ones and live them.
+          </p>
+        </div>
+
+        <div class="promise-list" data-stagger>
+          <!-- EDITABLE: Promise statements. Keep them realistic and action-based. -->
+          <button class="promise-item" type="button" aria-pressed="false" data-editable="promise-1">
+            <span>01</span>
+            I will listen better before trying to defend myself.
+          </button>
+          <button class="promise-item" type="button" aria-pressed="false" data-editable="promise-2">
+            <span>02</span>
+            I will communicate honestly, even when the conversation is uncomfortable.
+          </button>
+          <button class="promise-item" type="button" aria-pressed="false" data-editable="promise-3">
+            <span>03</span>
+            I will respect your feelings without minimizing them.
+          </button>
+          <button class="promise-item" type="button" aria-pressed="false" data-editable="promise-4">
+            <span>04</span>
+            I will learn from this instead of pretending the apology is enough.
+          </button>
+          <button class="promise-item" type="button" aria-pressed="false" data-editable="promise-5">
+            <span>05</span>
+            I will show you through consistency, not just words.
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section letter-section reveal" id="letter" aria-labelledby="letter-title">
+      <div class="section__inner narrow">
+      <p class="chapter">sorry</p>
+
+        <!-- EDITABLE: Section 5 headline -->
+        <h2 id="letter-title" data-editable="letter-headline">A Letter For You</h2>
+
+        <article class="letter-paper" data-letter>
+          <div class="letter-3d" aria-hidden="true">
+            <div class="letter-3d__paper"></div>
+          </div>
+          <!-- EDITABLE: Letter salutation -->
+          <p class="letter-salutation" data-editable="letter-salutation">Dear <span>Ichu</span>,</p>
+
+          <!--
+            EDITABLE: Personal letter.
+            Replace the paragraphs below with your own words. Keep it specific, accountable,
+            and focused on listening rather than demanding forgiveness.
+          -->
+          <div class="letter-body">
+            <p data-editable="letter-paragraph-1">
+              I have been thinking about what happened, and I do not want to treat your hurt
+              like something that should simply pass because I said the word "sorry."
+            </p>
+            <p data-editable="letter-paragraph-2">
+              You deserve to feel respected, safe, and heard with me. If my words, choices,
+              or silence made you feel anything less than that, I am deeply sorry.
+            </p>
+            <p data-editable="letter-paragraph-3">
+              I cannot change the moment behind us, but I can choose honesty now. I can choose
+              patience. I can choose to listen carefully, learn from this, and become better in
+              the ways that matter.
+            </p>
+            <p data-editable="letter-paragraph-4">
+              I care about you. I appreciate you. And I am grateful for every part of you that
+              you have trusted me enough to share.
+            </p>
+          </div>
+
+          <!-- EDITABLE: Signature -->
+          <p class="letter-signature" data-editable="letter-signature">With all my sincerity,<br><span>athul</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section question-section reveal" id="question" aria-labelledby="question-title">
+      <div class="section__inner narrow center">
+        <p class="chapter">sorry</p>
+
+        <!-- EDITABLE: One last question sequence -->
+        <p class="quiet-line" data-editable="question-line-1">I cannot change what happened&hellip;</p>
+        <h2 id="question-title" data-editable="question-line-2">But I can choose what I do next.</h2>
+        <p class="question-copy" data-editable="question-final-message">
+          If you are willing, I would like the chance to make things right.
+        </p>
+
+        <button class="primary-button secondary-action" id="talkButton" type="button">
+          <span>Can We Talk?</span>
+          <span aria-hidden="true">&#9825;</span>
+        </button>
+
+        <p class="talk-response" id="talkResponse" hidden>
+          No pressure. No expectations. I just want to listen.
+        </p>
+      </div>
+    </section>
+
+    <section class="section final-section reveal" id="final" aria-labelledby="final-title">
+      <div class="section__inner narrow center">
+        <!-- EDITABLE: Final scene messages -->
+        <p class="final-line" data-editable="final-line-1">Thank you for being you.</p>
+        <h2 id="final-title" data-editable="final-line-2">I am truly sorry.</h2>
+        <p class="final-message" data-editable="final-message">You mean a lot to me.</p>
+        <p class="final-signature" data-editable="final-signature">&mdash; With all my sincerity, athul</p>
+
+        <div class="final-actions">
+          <button class="text-button" id="readAgainBtn" type="button">Read it again</button>
+          <button class="text-button" id="copyMessageBtn" type="button">Copy a gentle message</button>
+        </div>
+        <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">&uarr;</button>
+
+  <script src="./script.js"></script>
+</body>
+</html>
